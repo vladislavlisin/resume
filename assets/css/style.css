@@ -1,76 +1,143 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    padding: 20px; /* Добавим немного отступов для наглядности */
+    padding: 20px;
     background-color: #f4f4f4;
     color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Чтобы контент был по центру, даже если его мало */
-}
-
-.page-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Ensure full viewport height for centering */
 }
 
 .resume-container {
     width: 80%;
-    max-width: 800px; /* Размер листа A4 */
+    max-width: 800px;
     background: white;
-    padding: 30px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1); /* Легкая тень */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     box-sizing: border-box;
+    /* margin: 0 auto;  Удаляем, чтобы не было конфликта с flexbox */
 }
 
+/* Header Styles */
 header {
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+}
+.address {
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.address span {
+    display: block;
+     margin-bottom: 0.2em;
+}
+
+.address a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.address a:hover{
+    text-decoration: underline;
+}
+/* Section Styles */
+section {
+    margin-top: 15px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #ddd;
 }
 
-section {
-    margin-top: 20px;
+section:last-child {
+    border-bottom: none;
 }
 
 h2 {
-    position: relative;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: none;
     padding-bottom: 5px;
-    margin-bottom: 15px;
-    display: inline-block; /* Делаем заголовок блочным */
-}
-
-h2::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 1px;
-    background-color: #eee;
-    z-index: -1;
-}
-
-ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-li {
     margin-bottom: 10px;
 }
+h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    margin-top: 5px;
+}
 
-h3 {
+/* Education and Experience Items */
+.edu-item, .exp-item {
+    margin-bottom: 15px;
+}
+
+.edu-title, .exp-title {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 5px;
 }
 
-.contacts ul li a {
-    text-decoration: none;
-    color: #007bff;
+.edu-title strong, .exp-title strong{
+    font-weight: bold;
 }
 
-.contacts ul li a:hover {
-    text-decoration: underline;
+.exp-company {
+    font-style: italic;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.exp-company span {
+    font-style: italic;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+ th {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* List Styles */
+ul {
+    padding-left: 20px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+li {
+    margin-bottom: 0.5em;
+    line-height: 1.4;
+}
+/* Projects list styles */
+.projects ul {
+    padding-left: 0;
+}
+
+.projects li{
+     margin-bottom: 10px;
 }
